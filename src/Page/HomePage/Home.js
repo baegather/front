@@ -6,6 +6,7 @@ function Home() {
   return (
     <Wrapper>  
         <Link to = '/board'> <Button>Board</Button> </Link>
+				
     </Wrapper>
   );
 }
