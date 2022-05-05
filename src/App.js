@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import routes from './routes'
 /* Page */
-import Home from './Page/HomePage/Home';
-import Board from './Page/BoardPage/Board';
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route path='/board' element={<Board />} />
+				{routes.map(route => {
+					return (
+						<Route key={route.path} exact path={route.path} element={<route.component />} />
+					)
+				})}
+        {/* <Route path='/board' element={<Board />} /> */}
       </Routes>
     </BrowserRouter>
   );

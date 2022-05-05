@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
@@ -14,6 +14,8 @@ import Restaurant from "./Restaurant";
 import ReceiptLocation from "./ReceiptLocation";
 
 function Board() {
+	const [num, setNum] = useState(0)
+
   return (
     <MainBoard>
       <UserInfo />
@@ -24,7 +26,7 @@ function Board() {
       <ReceiptLocation />
       <Row>
         <Col>
-          <button>모집 2/4 명</button>
+          <button>모집 {num}/4 명</button>
         </Col>
         <Col>
           <Link to="/board">
@@ -37,8 +39,6 @@ function Board() {
   );
 }
 
-
-
 const MainBoard = styled.div`
   padding: 5% 5% 5% 5%;
   background: #f9f9f9;
@@ -49,8 +49,6 @@ const MainBoard = styled.div`
     font-weight: 600;
   }
 `;
-
-
 
 const Button = styled.button`
   font-size: 1.2rem;
