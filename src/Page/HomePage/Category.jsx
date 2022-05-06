@@ -1,41 +1,35 @@
-import React, {useState, useEffect} from 'react'
 import styled from "styled-components";
-import ScrollMenu from "react-horizontal-scrolling-menu"; // ScrollMenu 가져오기
-
 
 const Category = () => {
-	let categorys = [
-    { name: "item1" },
-    { name: "item2" },
-    { name: "item3" },
-    { name: "item4" },
-    { name: "item5" },
-    { name: "item6" },
-    { name: "item7" },
-    { name: "item8" },
-    { name: "item9" },
-    { name: "item10" },
-    { name: "item11" },
-    { name: "item12" },
-    { name: "item13" },
-    { name: "item14" },
-    { name: "item15" },
-  ]; // 임시데이터 선언
+  const categorys = [
+    { name: "전체" },
+    { name: "한식" },
+    { name: "분식" },
+    { name: "카페" },
+    { name: "일식" },
+    { name: "치킨" },
+    { name: "피자" },
+    { name: "양식" },
+    { name: "중국집" },
+    { name: "족발" },
+    { name: "야식" },
+    { name: "도시락" },
+    { name: "패스트푸드" },
+    { name: "채식" },
+  ];
 
-	const categoryList = categorys.map((category, key) => (
-    <div key={key}>{category}</div>
+  const categoryList = categorys.map((category, index) => (
+    <button key={index}>{category.name}</button>
   ));
 
-	return (
-	<>
-		<Container>
+  return (
+		<Scroll>
 			{categoryList}
-		</Container>
-	</>
+		</Scroll>
 	);
 };
 
-const Container = styled.button`
+const Scroll = styled.div`
   height: 38%;
   width: 90%;
   display: inline-block;

@@ -13,6 +13,7 @@ import Board from './Board'
 import SignIn from '../SignIn/SignIn'
 import Location from './Location'
 import SearchButton from "./SearchButton";
+import FooterButtons from "./FooterButtons";
 		
 const Home = () => {
   return (
@@ -23,39 +24,14 @@ const Home = () => {
           <SearchButton />
         </Row>
         <Divider style={{ color: "#E8E8E8" }} />
-        {/* <Category /> */}
+        <Category />
       </Header>
       <Section>
         <Board />
         <SignIn />
       </Section>
       <Footer>
-        <Row>
-          <Col>
-            <Link to="/">
-              <HomeOutlined
-                style={{ color: "#90B661", size: "30px", marginRight: "4px" }}
-              />
-              <div>홈</div>
-            </Link>
-          </Col>
-          <Col>
-            <Link to="/board">
-              <PlusCircleOutlined
-                style={{ color: "#90B661", size: "30px", marginRight: "4px" }}
-              />
-              <div>모임 만들기</div>
-            </Link>
-          </Col>
-          <Col>
-            <Link to="/board">
-              <UserOutlined
-                style={{ color: "#90B661", size: "30px", marginRight: "4px" }}
-              />
-              <div>마이페이지</div>
-            </Link>
-          </Col>
-        </Row>
+				<FooterButtons />
       </Footer>
     </Wrapper>
   );
