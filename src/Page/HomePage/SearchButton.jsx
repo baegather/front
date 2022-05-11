@@ -12,10 +12,9 @@ import {
 const SearchButton = () => {
 
 	return (
-    <button>
-      <Col flex="auto">
-        <SearchOutlined style={{ color: "#90B661", size: "30px" }} />
-      </Col>
+    <button style={{ color: "#90B661", width: '2rem', height: '2rem', border: 'none', background: "rgba(0,0,0,0)",
+		marginLeft: 'auto', marginRight: "2rem"}}>
+			<SearchOutlined style={{ color: "#90B661", fontSize: '150%',}}/>
     </button>
   );
 };

@@ -19,19 +19,19 @@ const Home = () => {
   return (
     <Wrapper>
       <Header>
-        <Row justify="start">
+        <div justify="start" style={{ borderBottom: "#E8E8E8 solid 3px", height: '50%', display: "flex",
+    alignItems: 'center' }}>
           <Location />
           <SearchButton />
-        </Row>
-        <Divider style={{ color: "#E8E8E8" }} />
-        <Category />
+        </div>
+				<Category />
       </Header>
       <Section>
         <Board />
-        <SignIn />
+        {/* <SignIn /> */}
       </Section>
       <Footer>
-				<FooterButtons />
+        <FooterButtons />
       </Footer>
     </Wrapper>
   );
@@ -41,19 +41,26 @@ const Wrapper = styled.div`
   width: 768px;
   font-family: "LatoRegular";
   line-height: 1.5;
-  padding: 5% 10% 4% 10%;
-
+  /* padding: 5% 10% 4% 10%; */
+  margin: 5% auto;
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 2% 0% 0% 0%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
   }
 `;
 
 const Header = styled.header`
   width: 100%;
-  height: 200px;
-	background-color: #ffe082;
-
+  height: 100px;
+  background-color: #ffe082;
+  display: "flex";
+  align-items: "center";
 `;
 
 
@@ -66,6 +73,7 @@ const Button = styled.button`
 `;
 
 const Section = styled.section`
+	width: 100%;
   height: 700px;
 `;
 
@@ -76,6 +84,12 @@ const Footer = styled.footer`
   bottom: 0;
   background-color: #ffb300;
   max-width: 768px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export default Home;

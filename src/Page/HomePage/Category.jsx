@@ -18,8 +18,26 @@ const Category = () => {
     { name: "채식" },
   ];
 
+	const onClickCategory = (e) => {
+		console.log(e.target.value)
+	};
+
   const categoryList = categorys.map((category, index) => (
-    <button key={index}>{category.name}</button>
+    <button
+      key={index}
+      onClick={onClickCategory}
+      value={category.name}
+      style={{
+        border: "none",
+        marginLeft: "0.5rem",
+        backgroundColor: "rgba(0,0,0,0)",
+        fontWeight: "bold",
+        fontSize: "1rem",
+        color: "#b1b1b1",
+      }}
+    >
+      {category.name}
+    </button>
   ));
 
   return (
@@ -30,16 +48,18 @@ const Category = () => {
 };
 
 const Scroll = styled.div`
-  height: 38%;
+  height: 50%;
   width: 90%;
-  display: inline-block;
+  display: flex;
   margin: 0 auto;
-  padding: 0 5%;
   flex-wrap: nowrap;
   -ms-overflow-style: none;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default Category;

@@ -18,23 +18,26 @@ const Location = () => {
   ];
 	
   const locationList = locations.map((location, key) => (
-    <Option key={key} value={location.name}>
+    <Option key={key} value={location.name} style={{}}>
       {location.name}
     </Option>
   ));
 
   return (
     <div>
-      <Col flex="50%" style={{}}>
-        <Select
-          defaultValue="전체"
-          style={{ width: 120, color: "#90B661", fontWeight: "bold" }}
-          onChange={handleChange}
-          bordered={false}
-        >
-          {locationList}
-        </Select>
-      </Col>
+      <Select
+        defaultValue="전체"
+        style={{
+          width: 120,
+          color: "#90B661",
+          fontWeight: "bold",
+          marginLeft: "2rem",
+        }}
+        onChange={handleChange}
+        bordered={false}
+      >
+        {locationList}
+      </Select>
     </div>
   );
 }

@@ -16,25 +16,52 @@ import ReceiptLocation from "./ReceiptLocation";
 function Board() {
 	const [num, setNum] = useState(0)
 
+	const onClickJoin = () => {
+
+	};
+	
   return (
     <MainBoard>
       <UserInfo />
       <MainText />
-      <br /> 
-			<Restaurant />
-      <br />{" "}
-      <ReceiptLocation />
-      <Row>
-        <Col>
-          <button>모집 {num}/4 명</button>
-        </Col>
-        <Col>
-          <Link to="/board">
-            {" "}
-            <Button>참가하기</Button>{" "}
-          </Link>
-        </Col>
-      </Row>
+      <Restaurant />
+			<ReceiptLocation />
+      <div style={{ width: "100%", height: "3rem", textAlign: "center" }}>
+        <button
+          style={{
+            width: "40%",
+            height: "100%",
+            borderRadius: "10px",
+            border: "none",
+            backgroundColor: "#E8E8E8",
+            color: "#90B661",
+            fontWeight: "Bold",
+            fontSize: "1rem",
+						marginRight: '3rem'
+          }}
+        >
+          모집 {num}/4 명
+        </button>
+
+        <Link to="/board">
+          {" "}
+          <Button
+            onClick={onClickJoin}
+            style={{
+              width: "40%",
+              height: "100%",
+              borderRadius: "10px",
+              border: "none",
+              backgroundColor: "#90B661",
+              color: "#fff",
+              fontWeight: "Bold",
+              fontSize: "1rem",
+            }}
+          >
+            참가하기
+          </Button>{" "}
+        </Link>
+      </div>
     </MainBoard>
   );
 }
